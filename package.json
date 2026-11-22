@@ -1,0 +1,13 @@
+{
+  "name": "fieldnotes-public-info",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A small public information site with a token-protected JSON publishing API.",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
