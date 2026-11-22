@@ -34,7 +34,3 @@ curl -X POST https://YOUR-HOST/api/items \
 `.env` 和 `.env.*` 被 Git 忽略；只在服务器环境配置 `ADMIN_API_KEY`，不要把密钥写进代码、公开网页、URL 或提交记录。页面响应提供带随机 nonce 的脚本 CSP、安全响应头，并对内容做 HTML 转义；服务端使用恒定时间比较令牌、限制请求体大小、验证 URL 与字段、序列化内容写入，并通过唯一临时文件和重命名保存数据。
 
 内容默认存于 `data/items.json`。若部署平台重新部署会清理应用目录，应将 `DATA_FILE` 指向持久化存储。公开列表设短期缓存；管理响应不缓存。
-
-## 部署记录
-
-该项目原先部署于 Silly Development。其早先 Cloudflare 配置记录指出，`info.wabicat.kdns.fr` 使用 Flexible SSL：访客至 Cloudflare 为 HTTPS，但 Cloudflare 到源站仍为 HTTP。因此不要把它描述为端到端加密，也不要经该明文回源链路传输管理员密钥。部署与 DNS 配置可能变化，操作前应重新核对。
